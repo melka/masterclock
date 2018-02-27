@@ -1,5 +1,5 @@
 /* ============================================================================ */
-/* Copyright (c) 2016, Texas Instruments Incorporated                           */
+/* Copyright (c) 2017, Texas Instruments Incorporated                           */
 /*  All rights reserved.                                                        */
 /*                                                                              */
 /*  Redistribution and use in source and binary forms, with or without          */
@@ -44,7 +44,7 @@
 /* -heap   0x0100                                   HEAP AREA SIZE            */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
-/* Version: 1.198                                                             */
+/* Version: 1.203                                                             */
 /*----------------------------------------------------------------------------*/
 
 /****************************************************************************/
@@ -106,7 +106,7 @@ SECTIONS
     .mspabi.extab : {} > FLASH              /* C++ Constructor tables            */
 #ifdef __TI_COMPILER_VERSION__
   #if __TI_COMPILER_VERSION__ >= 15009000
-    #ifndef __LARGE_DATA_MODEL__
+    #ifndef __LARGE_CODE_MODEL__
     .TI.ramfunc : {} load=FLASH, run=RAM, table(BINIT)
     #else
     .TI.ramfunc : {} load=FLASH | FLASH2, run=RAM, table(BINIT)
@@ -143,4 +143,3 @@ SECTIONS
 /****************************************************************************/
 
 -l msp430g2553.cmd
-
